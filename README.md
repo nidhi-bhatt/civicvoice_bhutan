@@ -19,17 +19,13 @@ The system understands the question, figures out which government department han
 
 ## How it works
 
-Voice/Text Input
-↓
-Whisper ASR — converts speech to text
-↓
-Llama 3.3 (Groq) — classifies which G2C service category it belongs to
-↓
-RAG (LangChain + FAISS) — searches real Bhutan government documents
-↓
-LLM — generates a clear, citizen-friendly answer
-↓
-gTTS — speaks the answer back in English
+| Step | Component | What it does |
+|------|-----------|--------------|
+| 1 | Whisper ASR | Converts voice input to text |
+| 2 | Llama 3.3 (Groq) | Classifies which G2C service category the question belongs to |
+| 3 | RAG (LangChain + FAISS) | Searches real Bhutan government documents for relevant content |
+| 4 | LLM | Generates a clear, citizen-friendly answer |
+| 5 | gTTS | Speaks the answer back in English |
 
 ---
 
@@ -63,13 +59,3 @@ All answers are grounded in real Bhutan government sources:
 `Whisper` · `LangChain` · `FAISS` · `Llama 3.3 via Groq` · `gTTS` · `Gradio` · `HuggingFace Spaces`
 
 ---
-
-## Note on Dzongkha
-
-Dzongkha (Bhutan's national language) is absent from Google Translate, Common Voice, and FLEURS — making it one of the most under-resourced languages in NLP. This project operates in English while acknowledging that gap. A Dzongkha-capable pipeline would require a dedicated NMT model (e.g. from [nlp.cst.edu.bt](http://nlp.cst.edu.bt)) and labelled ASR data that does not yet publicly exist.
-
----
-
-## Built for
-
-This project was built as a portfolio contribution aligned with the [Omdena CivicAI Bhutan](https://omdena.com) project — exploring the feasibility of voice-enabled, multilingual AI for Bhutan's public services.
